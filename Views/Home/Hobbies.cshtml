@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Mis Pasatiempos";
+    var hobbies = Model as List<string>;
+}
+
+<h1>Mis Pasatiempos</h1>
+<ul class="list-group">
+    @foreach (var hobby in hobbies)
+    {
+        <li class="list-group-item">@hobby</li>
+    }
+</ul>
+

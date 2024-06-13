@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Mis Artistas Favoritos";
+    var artists = Model as List<Artistas.Models.Artist>;
+}
+
+<h1>Mis Artistas Favoritos</h1>
+@foreach (var artist in artists)
+{
+    <div class="artist">
+        <img src="@artist.ImageUrl" alt="@artist.Name" class="img-thumbnail" />
+        <h2>@artist.Name</h2>
+        <p>@artist.Summary</p>
+        <ul>
+            @foreach (var work in artist.Works)
+            {
+                <li>@work</li>
+            }
+        </ul>
+        <p><a href="@artist.Link" target="_blank">Más información</a></p>
+    </div>
+}
+
